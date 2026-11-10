@@ -1,40 +1,70 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8">
+<meta name="theme-color" content="#7560a8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Essay Forge</title>
 <style>
-:root{--bg:#f6f1e4;--sf:#fffdf6;--ink:#1c2340;--mut:#6b6f85;--ln:#d9d1bb;--red:#c8302c;--ok:#2f7d4f;--hl:#fbe9a8;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#14172a;--sf:#1d2140;--ink:#f2eedf;--mut:#a3a7c2;--ln:#343a63;--red:#ff6b64;--ok:#6fd09a;--hl:#4a4320}}
-:root[data-theme="dark"]{color-scheme:dark;--bg:#14172a;--sf:#1d2140;--ink:#f2eedf;--mut:#a3a7c2;--ln:#343a63;--red:#ff6b64;--ok:#6fd09a;--hl:#4a4320}
+:root{--bg:#7560a8;--tx:#fff;--tm:#f3eeff;--sf:#fffaf2;--ink:#1d1238;--mut:#665b86;--ln:#cfc3f0;--red:#d93a35;--ok:#1f8f57;--hl:#ffe3b8;--sky:#8fdcff;--lav:#b39dfc;--or:#fdb468;--disp:"Arial Black","Avenir Next Heavy","Segoe UI Black",Impact,system-ui,sans-serif;--scr:"Snell Roundhand","Brush Script MT","Segoe Script","Lucida Handwriting",cursive;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 html{scroll-padding-top:env(safe-area-inset-top,0px)}*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 "Iowan Old Style",Georgia,serif}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.5 "Avenir Next","Segoe UI",system-ui,sans-serif}
 main{max-width:740px;margin:0 auto;padding:18px 16px 70px}
-h1{font-size:2.3rem;line-height:1.05;margin:0}h1 em{color:var(--red);font-style:normal;text-decoration:underline wavy;text-underline-offset:6px}
-h2{font-size:1.3rem;margin:18px 0 4px}.mut{color:var(--mut)}.sm{font-size:.88rem}
-.ui,.bar,.chip,.btn,label,.ck,.cn,.roles button,.slot small{font-family:system-ui,sans-serif}
-.bar{display:flex;gap:10px;align-items:center;margin:14px 0 8px;font-size:.85rem}
-.xp{flex:1;height:10px;background:var(--ln);border-radius:9px;overflow:hidden}.xp i{display:block;height:100%;background:var(--red);transition:width .4s}
-.chip{display:inline-block;padding:3px 10px;border:1.5px solid var(--ink);border-radius:99px;font-weight:700;font-size:.78rem;margin:2px 4px 2px 0}.chip.off{opacity:.3;border-style:dashed}.chip.on{background:var(--hl)}
+h1{font:900 2.6rem/1 var(--disp);margin:0;color:#fff;letter-spacing:-.01em}
+h1 .s{display:block;font:700 2.2rem/1 var(--scr);color:var(--lav);margin-bottom:-.3rem;transform:rotate(-3deg);transform-origin:left bottom}
+h2{font:900 1.35rem/1.15 var(--disp);margin:24px 0 4px}
+.mut{color:var(--tm)}.sm{font-size:.88rem}
+.card .mut,.q .mut,.fb .mut{color:var(--mut)}
+.bar{display:flex;gap:10px;align-items:center;margin:14px 0 8px;font-size:.85rem;font-weight:700}
+.xp{flex:1;height:12px;background:rgba(255,255,255,.28);border-radius:9px;overflow:hidden}.xp i{display:block;height:100%;background:var(--or);transition:width .4s;border-radius:9px}
+.chip{display:inline-block;padding:3px 10px;border:1.5px solid #fff;border-radius:99px;font-weight:800;font-size:.76rem;margin:2px 4px 2px 0;color:#fff}.chip.off{opacity:.5;border-style:dashed}.chip.on{background:var(--or);color:var(--ink);border-color:var(--ink)}
+.card .chip{color:var(--ink);border-color:var(--ink)}
 .grid{display:grid;gap:12px}
 button{font:inherit;color:inherit;cursor:pointer}
-.m{width:100%;text-align:left;background:var(--sf);border:1.5px solid var(--ink);border-radius:6px;padding:14px;box-shadow:4px 4px 0 var(--ink);transition:transform .15s,box-shadow .15s}
-.m:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--red)}.m b{display:block;font-size:1.1rem}.m .t{float:right;font-family:system-ui,sans-serif;font-weight:700;color:var(--ok)}
-.btn{font-weight:700;background:var(--ink);color:var(--bg);border:0;border-radius:6px;padding:10px 16px}.btn.g{background:none;color:var(--ink);border:1.5px solid var(--ink)}.btn:disabled{opacity:.35;cursor:default}
+.m{width:100%;text-align:left;background:var(--sky);color:var(--ink);border:2px solid var(--ink);border-radius:16px;padding:14px 16px;box-shadow:4px 4px 0 var(--ink);transition:transform .15s,box-shadow .15s}
+.grid .m:nth-child(3n+2){background:var(--lav)}.grid .m:nth-child(3n){background:var(--or)}
+.m:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 #fff}
+.m b{display:block;font:900 1.05rem/1.25 var(--disp)}.m .t{float:right;font-weight:800;color:var(--ink)}.m .mut{color:#3a2d62}
+.btn{font-weight:800;background:var(--ink);color:#fff;border:2px solid var(--ink);border-radius:99px;padding:10px 18px}.btn.g{background:none;color:#fff;border-color:#fff}.btn:disabled{opacity:.4;cursor:default}
 .row{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
-.slot{display:flex;gap:10px;padding:10px 12px;border:1.5px dashed var(--ln);border-radius:6px;margin:8px 0;min-height:54px;background:var(--sf)}
-.slot .n{font-family:system-ui,sans-serif;font-weight:800;color:var(--red);min-width:1.3rem}.slot small{display:block;color:var(--mut);font-size:.7rem;text-transform:uppercase;letter-spacing:.06em}
-.slot.ok{border:1.5px solid var(--ok)}.slot.no{border:1.5px solid var(--red);background:color-mix(in srgb,var(--red) 10%,var(--sf))}
-.pick{display:block;width:100%;text-align:left;margin:8px 0;padding:12px;border:1.5px solid var(--ink);border-radius:6px;background:var(--hl)}
-.fb{margin-top:14px;padding:12px 14px;border-left:5px solid var(--red);background:var(--sf)}.fb.ok{border-color:var(--ok)}
+.slot{display:flex;gap:10px;padding:10px 12px;border:2px dashed var(--ln);border-radius:14px;margin:8px 0;min-height:54px;background:var(--sf);color:var(--ink)}
+.slot .n{font-weight:900;color:var(--red);min-width:1.3rem}.slot small{display:block;color:var(--mut);font-size:.7rem;text-transform:uppercase;letter-spacing:.06em}
+.slot.ok{border:2px solid var(--ok)}.slot.no{border:2px solid var(--red);background:color-mix(in srgb,var(--red) 12%,var(--sf))}
+.pick{display:block;width:100%;text-align:left;margin:8px 0;padding:12px 14px;border:2px solid var(--ink);border-radius:14px;background:var(--hl);color:var(--ink);box-shadow:3px 3px 0 var(--ink)}
+.pick:disabled{cursor:default;box-shadow:none}
+.pick.bad{background:color-mix(in srgb,var(--red) 22%,var(--sf));border-color:var(--red)}
+.pick.mine{outline:3px dashed var(--or);outline-offset:2px}
+.pick.fine{background:var(--sf)}
+.fb{margin-top:14px;padding:12px 14px;border-left:6px solid var(--red);border-radius:0 14px 14px 0;background:var(--sf);color:var(--ink)}.fb.ok{border-color:var(--ok)}
 .roles{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;margin-top:12px}
-.roles button{padding:11px 8px;border:1.5px solid var(--ink);border-radius:6px;background:var(--sf);font-weight:600}.roles button.sel{background:var(--hl)}
-.roles button.ok{background:var(--ok);color:#fff;border-color:var(--ok)}.roles button.no{background:var(--red);color:#fff;border-color:var(--red)}
-.q{font-size:1.1rem;line-height:1.45;padding:16px;background:var(--sf);border:1.5px solid var(--ln);border-radius:6px}
-textarea{width:100%;min-height:96px;padding:10px;border:1.5px solid var(--ln);border-radius:6px;background:var(--sf);color:var(--ink);font:inherit;resize:vertical}textarea:focus{outline:2px solid var(--red)}
-label{display:block;margin:16px 0 4px;font-weight:700;font-size:.85rem}label span{font-weight:400;color:var(--mut)}
-.ck{font-size:.88rem;margin:4px 0}.ck.y{color:var(--ok)}.ck.n{color:var(--red)}
-.cn{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding:8px 0;font-size:.85rem;border-bottom:1.5px solid var(--ln)}
-.ch{display:inline-block;margin:3px 4px 3px 0;padding:5px 10px;border:1.5px solid var(--ink);border-radius:99px;background:var(--sf);font-family:system-ui,sans-serif;font-size:.8rem}
+.roles button,.ch{padding:11px 10px;border:2px solid var(--ink);border-radius:14px;background:var(--sf);color:var(--ink);font-weight:700}
+button.sel{background:var(--hl);outline:3px solid var(--or)}
+button.ok{background:var(--ok);color:#fff;border-color:var(--ok)}button.no{background:var(--red);color:#fff;border-color:var(--red)}
+.q{font-size:1.08rem;line-height:1.5;padding:16px;background:var(--sf);color:var(--ink);border:2px solid var(--ink);border-radius:16px;box-shadow:4px 4px 0 var(--ink)}
+textarea{width:100%;min-height:96px;padding:10px;border:2px solid var(--ln);border-radius:14px;background:var(--sf);color:var(--ink);font:inherit;resize:vertical}textarea:focus{outline:3px solid var(--or)}
+label{display:block;margin:16px 0 4px;font-weight:800;font-size:.85rem}label span{font-weight:400;color:var(--tm)}
+.ck{font-size:.9rem;margin:6px 0;padding:7px 12px;border-radius:12px;background:var(--sf);color:var(--ink);border-left:6px solid var(--ln)}.ck.y{border-left-color:var(--ok)}.ck.n{border-left-color:var(--red)}
+.cn{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding:8px 0;font-size:.85rem;border-bottom:2px solid rgba(255,255,255,.3)}
+.ch{display:inline-block;margin:3px 4px 3px 0;padding:5px 12px;border-radius:99px;font-size:.8rem}
+.card{background:var(--sf);color:var(--ink);border:2px solid var(--ink);border-radius:16px;padding:16px;box-shadow:4px 4px 0 var(--ink)}
+.big{font-size:1.1rem;line-height:1.55;margin:6px 0}
+.stp{display:flex;gap:12px;align-items:center;margin-bottom:10px}
+.stp i{font:900 1.5rem var(--disp);font-style:normal;background:var(--or);border:2px solid var(--ink);border-radius:50%;width:46px;height:46px;display:grid;place-items:center;flex:none}
+.stp b{font:900 1.15rem/1.2 var(--disp);display:block}.stp small{color:var(--mut)}
+.mk{background:var(--or);color:var(--ink);padding:0 4px;border-radius:5px;font-weight:800}
+.dg{display:flex;flex-direction:column;align-items:center;gap:2px}
+.dr{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;width:100%}
+.db{flex:1 1 130px;max-width:280px;padding:10px;background:var(--sky);border:2px solid var(--ink);border-radius:14px;text-align:center;color:var(--ink)}
+.dg .dr:nth-of-type(2n) .db{background:var(--lav)}.dg .dr:nth-of-type(3n) .db{background:var(--or)}
+.db small{display:block;font-size:.74rem;color:#3a2d62}
+.ar{font-size:1.3rem;font-weight:900;color:var(--ink);line-height:1}
+.cele{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;padding:12px 18px;border-radius:16px;margin-top:14px;border:2px solid var(--ink);box-shadow:4px 4px 0 var(--ink);color:var(--ink)}
+.cele .s{font:700 1.8rem var(--scr);color:#5a3fc9}.cele .s.cap{font:800 .72rem system-ui,sans-serif;letter-spacing:.25em;text-transform:uppercase;color:var(--ink)}
+.cele b{font:900 2.3rem/1 var(--disp);color:#fff;text-shadow:2px 2px 0 var(--ink),-1px -1px 0 var(--ink),1px -1px 0 var(--ink),-1px 1px 0 var(--ink)}
+.c-sky{background:var(--sky)}.c-lav{background:var(--lav)}.c-or{background:var(--or)}
+.slipbox{display:flex;gap:12px;align-items:flex-end;margin:12px 0}
+.slip{flex:none}
+.bub{position:relative;background:var(--sf);color:var(--ink);border:2px solid var(--ink);border-radius:16px;padding:10px 14px;flex:1;font-weight:600}
+.bub:before{content:"";position:absolute;left:-10px;bottom:18px;border:8px solid transparent;border-right-color:var(--ink);border-left:0}
+.stars{font-size:1.6rem;color:#e07a10;letter-spacing:.1em}
 </style></head><body><main id="app"></main>
 <script>
 var P=[
@@ -66,7 +96,7 @@ var LAB=[['For decades, company success has been judged almost entirely by profi
 var FIXK={VAG:'Too vague',NOX:'No example',OFF:'Off topic',CPY:'Copies the prompt',NSU:'No summary',OK:'Strong paragraph'};
 var FIXH={VAG:'It makes big claims but names nothing concrete. Add a measure, a number or a case.',NOX:'The claims are never backed up. A strong paragraph includes an example or evidence.',OFF:'One sentence drifts away from the point. Every sentence must serve the topic sentence.',CPY:'It repeats the prompt word for word. Rewrite the question in your own words.',NSU:'It ends on an example without wrapping up the idea. Add a closing sentence.',OK:'Topic sentence, two supporting points and a summary. This is the target.'};
 var FIX=[['Companies should care about many things, and there are lots of ways to measure that. It is important and many experts agree.','VAG'],['Environmental impact matters because it shows how a firm affects the world. Firms that reduce harm earn trust. This builds a better reputation. Therefore the environment is important.','NOX'],['Discuss how organizations can measure success beyond financial performance with reference to social, environmental and stakeholder impact. This essay will discuss that.','CPY'],['Hedging with forward contracts lets a Lagos importer fix its dollar cost. For example, a firm buying machinery can lock the rate for six months. Football clubs also use forwards when selling players.','OFF'],['Social impact shows whether staff are treated fairly. For example, a firm tracking staff turnover can see when pay or culture is failing. Another measure is community spend per employee, which shows reach beyond the office.','NSU'],['Auditors can use AI to test every transaction instead of a sample. For example, anomaly detection can flag duplicate invoices in seconds. Another benefit is that staff spend more time on judgement. Overall, AI strengthens risk assessment when auditors keep control of the models.','OK']];
-var S={xp:0,done:{},best:{},dec:{},dr:{}};try{var sv=JSON.parse(localStorage.getItem('ef2')||'null');if(sv)for(var k in sv)S[k]=sv[k]}catch(e){}
+var S={xp:0,done:{},best:{},dec:{},dr:{},cc:0,br:{}};try{var sv=JSON.parse(localStorage.getItem('ef2')||'null');if(sv)for(var k in sv)S[k]=sv[k]}catch(e){}
 function sav(){try{localStorage.setItem('ef2',JSON.stringify(S))}catch(e){}}
 function add(n){S.xp+=n;sav()}
 function esc(t){return String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
@@ -75,17 +105,17 @@ function wc(t){return(t.match(/\S+/g)||[]).length}
 var $=function(s){return document.querySelector(s)},app=$('#app'),G={},TM=0;
 var TT=['Rough draft','Sharp pencil','Clean copy','Tight prose','Senior editor','Master writer'];
 function nB(){return Object.keys(S.best).filter(function(k){return S.best[k]>0}).length}
-var BD=[['Intro Architect',function(){return S.done.o0}],['Paragraph Pro',function(){return S.done.o2}],['Essay Mapper',function(){return S.done.o4}],['Story Teller',function(){return S.done.o5}],['Role Master',function(){return S.done.lab}],['Draft Doctor',function(){return S.done.fix}],['Prompt Decoder',function(){return Object.keys(S.dec).length>=3}],['Essayist',function(){return nB()>=1}],['Marathoner',function(){return nB()>=4}]];
+var BD=[['Intro Architect',function(){return S.done.o0}],['Paragraph Pro',function(){return S.done.o2}],['Essay Mapper',function(){return S.done.o4}],['Story Teller',function(){return S.done.o5}],['Role Master',function(){return S.done.lab}],['Draft Doctor',function(){return S.done.fix}],['Prompt Decoder',function(){return Object.keys(S.dec).length>=3}],['Essayist',function(){return nB()>=1}],['Marathoner',function(){return nB()>=4}],['Concept Climber',function(){return Object.keys(S.done).filter(function(k){return k.indexOf('ad_')===0}).length>=3}],['Mistake Catcher',function(){return S.cc>=5}],['Path Finder',function(){return Object.keys(S.br).length>=5}]];
 function show(h){clearInterval(TM);app.innerHTML=h;window.scrollTo(0,0)}
-function head(){var l=Math.floor(S.xp/100),p=S.xp%100;return'<h1>Essay <em>Forge</em></h1><div class="bar"><span class="chip on">'+TT[Math.min(l,5)]+'</span><div class="xp"><i style="width:'+p+'%"></i></div><span>'+S.xp+' XP</span></div><div>'+BD.map(function(b){return'<span class="chip '+(b[1]()?'on':'off')+'">'+b[0]+'</span>'}).join('')+'</div>'}
-function home(){var d=function(k){return S.done[k]?'✓':''};show(head()+'<h2>Structure Gym</h2><p class="mut sm">Train the building blocks from your lessons.</p><div class="grid">'
+function head(){var l=Math.floor(S.xp/100),p=S.xp%100;return'<h1><span class="s">Essay</span>Forge</h1><div class="bar"><span class="chip on">'+TT[Math.min(l,5)]+'</span><div class="xp"><i style="width:'+p+'%"></i></div><span>'+S.xp+' XP</span></div><div>'+BD.map(function(b){return'<span class="chip '+(b[1]()?'on':'off')+'">'+b[0]+'</span>'}).join('')+'</div>'}
+function home(){var d=function(k){return S.done[k]?'✓':''};show(head()+adH()+'<h2>Structure Gym</h2><p class="mut sm">Train the building blocks from your lessons.</p><div class="grid">'
 +'<button class="m" data-a="o0"><span class="t">'+d('o0')+'</span><b>Build the introduction</b><span class="mut sm">3 steps: background, rewrite, thesis.</span></button>'
 +'<button class="m" data-a="o2"><span class="t">'+d('o2')+'</span><b>Build a body paragraph</b><span class="mut sm">4 steps: topic, reason, reason, summary.</span></button>'
 +'<button class="m" data-a="o4"><span class="t">'+d('o4')+'</span><b>Map the whole essay</b><span class="mut sm">Intro, body, conclusion.</span></button>'
 +'<button class="m" data-a="o5"><span class="t">'+d('o5')+'</span><b>Order a story answer (STAR)</b><span class="mut sm">For the integrity, conflict and failure prompts.</span></button>'
 +'<button class="m" data-a="sp"><span class="t">'+d('lab')+'</span><b>Role sprint</b><span class="mut sm">Name the job of each sentence.</span></button>'
 +'<button class="m" data-a="fx"><span class="t">'+d('fix')+'</span><b>Draft doctor</b><span class="mut sm">Diagnose what is wrong with a paragraph.</span></button></div>'
-+'<h2>Prompt Library</h2><p class="mut sm">Decode each question, then write it in the studio.</p><div class="grid">'+P.map(function(p,i){var b=S.best[i];return'<button class="m" data-a="pr" data-i="'+i+'"><span class="t">'+(b?b+' checks':'')+'</span><b>'+p.t+'</b><span class="mut sm">'+p.c+' · '+(p.x?p.n+'–'+p.x:'min '+p.n.toLocaleString('en-GB'))+(p.u==='w'?' words':' characters')+(S.dec[i]?' · decoded ✓':'')+'</span></button>'}).join('')+'</div><div class="row"><button class="btn" data-a="rnd">Timed challenge: random prompt, 25 minutes</button></div>')}
++mgH()+'<h2>Prompt Library</h2><p class="mut sm">Decode each question, then write it in the studio.</p><div class="grid">'+P.map(function(p,i){var b=S.best[i];return'<button class="m" data-a="pr" data-i="'+i+'"><span class="t">'+(b?b+' checks':'')+'</span><b>'+p.t+'</b><span class="mut sm">'+p.c+' · '+(p.x?p.n+'–'+p.x:'min '+p.n.toLocaleString('en-GB'))+(p.u==='w'?' words':' characters')+(S.dec[i]?' · decoded ✓':'')+'</span></button>'}).join('')+'</div><div class="row"><button class="btn" data-a="rnd">High energy mode: random prompt, 25-minute timer</button></div>')}
 function pr(i){var p=P[i];G={i:i};show(head()+'<h2>'+p.t+'</h2><div class="q">'+esc(p.q)+'</div><p class="mut sm">'+p.c+' · '+(p.x?p.n+'–'+p.x:'at least '+p.n.toLocaleString('en-GB'))+(p.u==='w'?' words':' characters')+'</p><div class="row"><button class="btn" data-a="dec" data-i="'+i+'">1 · Decode the question</button><button class="btn" data-a="st" data-i="'+i+'">2 · Write in the studio</button><button class="btn g" data-a="home">Back</button></div>')}
 function dec(i){G={i:i,s:1,sel:[],cmd:null,opts:null};decR()}
 function decR(){var p=P[G.i],h=head()+'<h2>Decode: '+p.t+'</h2><div class="q">'+esc(p.q)+'</div>';
@@ -99,29 +129,32 @@ show(h)}
 function isReq(p,o){return p.st?(o.indexOf('KPMG offices')<0&&o.indexOf('salary')<0):p.pts.some(function(x){return x[0]===o})}
 function dc(){var p=P[G.i],s=G.sel.map(function(k){return G.opts[k]}),ok=s.every(function(o){return isReq(p,o)});G.res=ok?'ok':'no';if(ok&&!S.dec[G.i]){S.dec[G.i]=1;add(15)}decR()}
 function ord(i){G={i:i,pool:shuf(ORD[i].s.map(function(_,k){return k})),pick:[],tries:0,res:null};ordR()}
-function ordR(){var d=ORD[G.i],h=head()+'<h2>'+d.n+'</h2><p class="mut sm">Tap the sentences in the right order. Tap a placed sentence to take it back.</p>';
+function ordR(){var d=ORD[G.i],h=head()+'<h2>'+d.n+'</h2><p class="mut sm">Tap the sentences in the right order. Tap a placed sentence to take it back.</p>'+nudge(d.k);
 d.st.forEach(function(st,k){var p=G.pick[k],c=G.res?(p===k?' ok':' no'):'';h+='<div class="slot'+c+'" data-s="'+k+'"><span class="n">'+(k+1)+'</span><div><small>'+st+'</small>'+(p!=null?esc(d.s[p]):'')+'</div></div>'});
 G.pool.forEach(function(k){if(G.pick.indexOf(k)<0)h+='<button class="pick" data-p="'+k+'">'+esc(d.s[k])+'</button>'});
-if(G.res==='ok')h+='<div class="fb ok"><b>Correct.</b> '+(G.tries?'Got it on try '+(G.tries+1)+'.':'First try!')+'</div><div class="row"><button class="btn" data-a="'+d.k+'">Another one</button><button class="btn g" data-a="home">Back</button></div>';
+if(G.res==='ok')h+=cele()+'<div class="fb ok"><b>Correct.</b> '+(G.tries?'Got it on try '+(G.tries+1)+'.':'First try!')+'</div><div class="row"><button class="btn" data-a="'+d.k+'">Another one</button><button class="btn g" data-a="home">Back</button></div>';
 else{if(G.res)h+='<div class="fb">Not quite. The red slots are out of place. Ask what job each sentence does.</div>';h+='<div class="row"><button class="btn" data-a="chk"'+(G.pick.length<d.s.length?' disabled':'')+'>Check</button><button class="btn g" data-a="home">Back</button></div>'}
 show(h)}
 function chk(){var ok=G.pick.every(function(p,k){return p===k});if(ok){G.res='ok';add(G.tries?10:20);S.done[ORD[G.i].k]=1;sav()}else{G.tries++;G.res='no'}ordR()}
 var QZ={sp:{it:LAB,o:ROLES,h:HINT,n:10,key:'lab',t:'Role sprint'},fx:{it:FIX,o:FIXK,h:FIXH,n:6,key:'fix',t:'Draft doctor'}};
 function qz(m){var z=QZ[m];G={m:m,q:shuf(z.it).slice(0,z.n),k:0,sc:0,st:0,ans:null};qzR()}
-function qzR(){var z=QZ[G.m];if(G.k>=z.n){add(G.sc*4);S.done[z.key]=1;sav();show(head()+'<h2>'+z.t+' complete</h2><div class="fb ok">You got '+G.sc+' of '+z.n+' right. +'+G.sc*4+' XP</div><div class="row"><button class="btn" data-a="'+G.m+'">Play again</button><button class="btn g" data-a="home">Back</button></div>');return}
+function qzR(){var z=QZ[G.m];if(G.k>=z.n){add(G.sc*4);S.done[z.key]=1;sav();show(head()+'<h2>'+z.t+' complete</h2>'+(G.sc>=z.n/2?cele():'')+'<div class="fb ok">You got '+G.sc+' of '+z.n+' right. +'+G.sc*4+' XP</div><div class="row"><button class="btn" data-a="'+G.m+'">Play again</button><button class="btn g" data-a="home">Back</button></div>');return}
 var q=G.q[G.k],h=head()+'<p class="mut sm">Round '+(G.k+1)+' of '+z.n+' · streak '+G.st+'</p><div class="q">'+esc(q[0])+'</div><p class="sm mut">'+(G.m==='sp'?'What job does this sentence do?':'What is wrong with this paragraph?')+'</p><div class="roles">';
 Object.keys(z.o).forEach(function(r){var c='';if(G.ans){if(r===q[1])c=' ok';else if(r===G.ans)c=' no'}h+='<button class="'+c+'" data-r="'+r+'"'+(G.ans?' disabled':'')+'>'+z.o[r]+'</button>'});
 h+='</div>';if(G.ans)h+='<div class="fb'+(G.ans===q[1]?' ok':'')+'"><b>'+z.o[q[1]]+'.</b> '+z.h[q[1]]+'</div><div class="row"><button class="btn" data-a="nx">Next</button></div>';show(h)}
 function flds(p){return p.st?STF.map(function(f){return[f[0],f[1]]}):[['Background statement','A broad sentence that sets the scene.'],['The question in your own words','Rewrite the prompt. Do not copy it.'],['Thesis statement','Your answer, with your main reasons.']].concat(p.pts.map(function(x,k){return['Body '+(k+1)+' · '+x[0],'Topic sentence, a reason or example, another reason or example, a summary. Idea: '+x[2]]})).concat([['Conclusion','Restate your thesis and main points. Add nothing new.']])}
 function st(i,timed){var p=P[i],f=flds(p),d=S.dr[i]||[];G={i:i,f:null};var tl=p.u==='w'?'words':'characters';
-show('<h1 style="font-size:1.5rem">'+p.t+'</h1><div class="q sm">'+esc(p.q)+'</div><div class="cn"><span id="cnt"></span> <button class="btn g" style="padding:4px 10px" id="tmb" data-a="tm">Start 25:00 timer</button> <b id="tmr"></b><div class="xp" style="margin-top:6px"><i id="cb" style="width:0"></i></div></div>'
+show('<h1 style="font-size:1.5rem">'+p.t+'</h1><div class="q sm">'+esc(p.q)+'</div><div class="cn"><span id="cnt"></span> <button class="btn g" style="padding:4px 10px" id="tmb" data-a="tm">Start 25:00 timer</button> <button class="btn" style="padding:4px 10px" id="tms" data-a="tms">Strict mode</button> <b id="tmr"></b><div class="xp" style="margin-top:6px"><i id="cb" style="width:0"></i></div></div>'
 +(p.ex?'<p class="sm mut" style="margin-bottom:0">Idea bank. Tap to add to the box you are writing in:</p><div>'+p.ex.map(function(x,k){return'<button class="ch" data-a="ch" data-k="'+k+'">'+esc(x)+'</button>'}).join('')+'</div>':'')
 +f.map(function(x,k){return'<label>'+(k+1)+' · '+esc(x[0])+'<br><span>'+esc(x[1])+'</span></label><textarea id="f'+k+'" data-k="'+k+'" style="min-height:'+(p.st?150:100)+'px">'+esc(d[k]||'')+'</textarea>'}).join('')
-+'<div class="row"><button class="btn" data-a="sc">Check my draft</button><button class="btn g" data-a="cp">Copy essay</button><button class="btn g" data-a="pr" data-i="'+i+'">Back</button></div><div id="fo"></div>');upd();if(timed)tm()}
++'<div class="row"><button class="btn" data-a="sc">Check my draft</button><button class="btn g" data-a="cp">Copy essay</button><button class="btn g" data-a="pr" data-i="'+i+'">Back</button></div><div id="fo"></div>');upd();if(timed)tmS()}
 function vals(p){return flds(p).map(function(_,k){var e=$('#f'+k);return e?e.value:''})}
 function tot(p,v){var a=v.join(' ');return p.u==='w'?wc(a):a.length}
 function upd(){var p=P[G.i],n=tot(p,vals(p)),c=$('#cnt');if(!c)return;c.textContent=n.toLocaleString('en-GB')+' / '+p.n.toLocaleString('en-GB')+(p.x?'–'+p.x:'+')+(p.u==='w'?' words':' characters');$('#cb').style.width=Math.min(100,n/p.n*100)+'%'}
 function tm(){var b=$('#tmb'),el=$('#tmr');if(!b)return;clearInterval(TM);var e=Date.now()+25*60000;b.textContent='Restart timer';TM=setInterval(function(){var s=Math.max(0,Math.round((e-Date.now())/1000));el.textContent=Math.floor(s/60)+':'+('0'+s%60).slice(-2);el.style.color=s<300?'var(--red)':'inherit';if(!s){clearInterval(TM);el.textContent='Time’s up. Finish your sentence.'}},500)}
+function tmS(){var el=$('#tmr');if(!el||G.strict)return;G.strict=1;clearInterval(TM);['#tmb','#tms'].forEach(function(x){var b=$(x);if(b)b.remove()});
+var bar=$('.cn'),tag=document.createElement('span');tag.className='chip on';tag.textContent='STRICT · no pause, no restart';bar.insertBefore(tag,el);
+var e=Date.now()+25*60000;TM=setInterval(function(){var s=Math.max(0,Math.round((e-Date.now())/1000));el.textContent=Math.floor(s/60)+':'+('0'+s%60).slice(-2);el.style.color=s<300?'#ffd1cf':'inherit';el.style.fontWeight=s<60?'900':'700';if(!s){clearInterval(TM);var p=P[G.i];S.dr[G.i]=vals(p);sav();document.querySelectorAll('textarea').forEach(function(t){t.disabled=true;t.style.opacity=.7});el.textContent='Time is up. Draft locked.';sc()}},250)}
 function cnt(re,t){return(t.match(re)||[]).length}
 function scr(p,v){var u=p.u==='w'?'words':'characters',n=tot(p,v),cs=[[n>=p.n,'Length: at least '+p.n.toLocaleString('en-GB')+' '+u+' (you have '+n.toLocaleString('en-GB')+')']];if(p.x)cs.push([n<=p.x,'Stay within '+p.x+' '+u]);
 if(p.st){cs.push([v[0].length>=300,'Situation: at least 300 characters of clear scene-setting'],[v[1].length>=200,'Your role and the stakes are explained (200+ characters)'],[v[2].length>=500&&cnt(/\bI\b/g,v[2])>=6,'Action is detailed and in the first person (500+ characters, 6+ uses of “I”)'],[v[3].length>=200&&/\d|result|outcome|as a result|eventually|finally|praise/i.test(v[3]),'Result gives a concrete outcome'],[v[4].length>=200&&/learn|lesson|now i|since then|principle|value/i.test(v[4]),'Lesson shows what you learned and now do differently']);return cs}
@@ -133,13 +166,13 @@ cs.push([wc(v[v.length-1])>=25&&/conclusion|overall|in short|therefore|thus|to s
 var L=['however','therefore','moreover','furthermore','in addition','consequently','for example','as a result','in contrast','overall'].filter(function(x){return a.indexOf(x)>-1}).length;cs.push([L>=4,'Linking words: use at least 4 different ones (you used '+L+')']);return cs}
 function sc(){var p=P[G.i],cs=scr(p,vals(p)),n=cs.filter(function(x){return x[0]}).length,h='';cs.forEach(function(x){h+='<div class="ck '+(x[0]?'y':'n')+'">'+(x[0]?'✓ ':'✗ ')+esc(x[1])+'</div>'});
 var b=S.best[G.i]||0,g=Math.max(0,n-b)*5+(n===cs.length&&b<cs.length?30:0);if(n>b){S.best[G.i]=n}if(g)add(g);sav();
-h+='<div class="fb'+(n===cs.length?' ok':'')+'"><b>'+n+' of '+cs.length+' checks passed.'+(g?' +'+g+' XP':'')+'</b> '+(n===cs.length?'Strong draft. Copy it and paste it to Claude for a detailed mark.':'Fix the red lines and check again. These checks look at structure and coverage, not the quality of your ideas.')+'</div>';$('#fo').innerHTML=h;$('#fo').scrollIntoView({behavior:'smooth'})}
+h+=(n===cs.length?cele():'')+'<div class="fb'+(n===cs.length?' ok':'')+'"><b>'+n+' of '+cs.length+' checks passed.'+(g?' +'+g+' XP':'')+'</b> '+(n===cs.length?'Strong draft. Copy it and paste it to Claude for a detailed mark.':'Fix the red lines and check again. These checks look at structure and coverage, not the quality of your ideas.')+'</div>';$('#fo').innerHTML=h;$('#fo').scrollIntoView({behavior:'smooth'})}
 function cpy(){var p=P[G.i],t=vals(p).join('\n\n'),ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();try{document.execCommand('copy');$('#fo').innerHTML='<div class="fb ok">Copied. Paste it into your chat with Claude for feedback.</div>'}catch(e){$('#fo').innerHTML='<div class="fb">Copy failed. Select the text in each box and copy it by hand.</div>'}ta.remove()}
 app.addEventListener('input',function(e){var t=e.target;if(t.tagName==='TEXTAREA'){var p=P[G.i];S.dr[G.i]=vals(p);sav();upd()}});
 app.addEventListener('focusin',function(e){if(e.target.tagName==='TEXTAREA')G.f=e.target.id});
 app.addEventListener('click',function(e){var t=e.target.closest('button,.slot');if(!t)return;var d=t.dataset,a=d.a;
-if(a==='home')return home();if(a==='pr')return pr(+d.i);if(a==='dec')return dec(+d.i);if(a==='d2'){G.s=2;return decR()}if(a==='dc')return dc();
-if(a==='st')return st(+d.i);if(a==='rnd')return st(Math.floor(Math.random()*P.length),1);if(a==='tm')return tm();if(a==='sc')return sc();if(a==='cp')return cpy();
+if(mg(a,d))return;if(a==='home')return home();if(a==='pr')return pr(+d.i);if(a==='dec')return dec(+d.i);if(a==='d2'){G.s=2;return decR()}if(a==='dc')return dc();
+if(a==='st')return st(+d.i);if(a==='rnd')return st(Math.floor(Math.random()*P.length),1);if(a==='tm')return tm();if(a==='tms')return tmS();if(a==='sc')return sc();if(a==='cp')return cpy();
 if(a==='ch'){var f=$('#'+(G.f||'f0')),x=P[G.i].ex[+d.k];f.value+=(f.value&&!/\s$/.test(f.value)?' ':'')+x+' ';f.focus();f.dispatchEvent(new Event('input',{bubbles:true}));return}
 if(a==='chk')return chk();if(a==='sp'||a==='fx')return qz(a);if(a==='nx'){G.k++;G.ans=null;return qzR()}
 if(GYM[a]){var g=GYM[a];return ord(g[Math.floor(Math.random()*g.length)])}
@@ -148,5 +181,135 @@ if(d.o!=null){var k=+d.o,j=G.sel.indexOf(k);if(j>-1)G.sel.splice(j,1);else G.sel
 if(d.r){var q=G.q[G.k];G.ans=d.r;if(d.r===q[1]){G.sc++;G.st++;add(2)}else G.st=0;return qzR()}
 if(d.p!=null&&G.res!=='ok'){G.pick.push(+d.p);G.res=null;return ordR()}
 if(d.s!=null&&G.res!=='ok'){G.pick.splice(+d.s,1);G.res=null;return ordR()}});
+/* ===== Teaching modes: ADEPT lessons, Catch Coach Slip, Choose your path ===== */
+var CEL=[['You','did it!','c-sky',''],['Power','within!','c-lav',''],['high energy mode','Nailed it!','c-or','cap']],CI=Math.floor(Math.random()*3);
+function cele(){var c=CEL[CI++%3];return'<div class="cele '+c[2]+'"><span class="s '+c[3]+'">'+c[0]+'</span><b>'+c[1]+'</b></div>'}
+function slip(m){var K='stroke="#1d1238" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"',mo=m==='oops'?'<path d="M36 66 q7 -6 14 0 q7 6 14 0" fill="none" '+K+'/><path d="M52 69 q3 13 10 5 z" fill="#ff7a8a" stroke="#1d1238" stroke-width="2"/>':m==='cheer'?'<path d="M36 62 q14 22 28 0 z" fill="#7a1f3a" '+K+'/>':'<path d="M38 64 q12 10 24 0" fill="none" '+K+'/>';
+return'<svg class="slip" viewBox="0 0 100 100" width="84" height="84" aria-hidden="true"><ellipse cx="50" cy="93" rx="26" ry="5" fill="rgba(0,0,0,.2)"/><circle cx="50" cy="54" r="37" fill="#fdb468" stroke="#1d1238" stroke-width="3"/><path d="M15 44 q35 -38 70 0 z" fill="#b39dfc" stroke="#1d1238" stroke-width="3" stroke-linejoin="round"/><circle cx="37" cy="54" r="5" fill="#1d1238"/><circle cx="63" cy="54" r="5" fill="#1d1238"/><circle cx="29" cy="64" r="6" fill="#ff8f7a" opacity=".6"/><circle cx="71" cy="64" r="6" fill="#ff8f7a" opacity=".6"/>'+mo+(m==='oops'?'<path d="M84 22 q7 11 0 15 q-7 -4 0 -15z" fill="#8fdcff" stroke="#1d1238" stroke-width="2"/>':'')+'</svg>'}
+function dgH(rows){return'<div class="dg">'+rows.map(function(r,i){return(i?'<div class="ar">↓</div>':'')+'<div class="dr">'+r.map(function(c){var p=c.split('|');return'<div class="db"><b>'+esc(p[0])+'</b>'+(p[1]?'<small>'+esc(p[1])+'</small>':'')+'</div>'}).join('')+'</div>'}).join('')+'</div>'}
+
+/* ---- 1. ADEPT lessons: Analogy, Diagram, Example, Plain English, Technical definition ---- */
+var STEPS=[['A','Analogy','What is it like?'],['D','Diagram','Picture it'],['E','Example','See it live'],['P','Plain English','Say it simply'],['T','Technical definition','Now the official words']];
+var AD=[
+{k:'thesis',t:'The thesis statement',sub:'Like telling the danfo conductor your destination.',
+an:'You climb into a danfo at Ojota and tell the conductor, “Yaba, through Maryland and Jibowu.” Now the driver, the passengers and you all know where the trip ends and which stops come on the way. Nobody is surprised at the first turn. A thesis is that one sentence for your reader.',
+dg:[['The question|where the trip starts'],['Thesis|destination plus stops'],['Reason 1|stop 1','Reason 2|stop 2','Reason 3|stop 3']],
+ex:{cap:'The three highlighted stops become your three body paragraphs.',parts:[['They have pushed up ',0],['inflation',1],[', raised ',0],['business costs',1],[' and strained ',0],['public finances',1],[', so the effects reach every household.',0]]},
+pl:'A thesis is one or two sentences that say: here is my answer, and here is why. If a reader read only that line, they would still know what your whole essay argues.',
+td:'Thesis statement: a concise statement in the introduction that answers the essay question and previews the main points the body paragraphs will develop.',
+chk:{q:'Which sentence works best as a thesis for “Discuss how higher fuel prices have affected the economy”?',o:['Fuel is used in cars and generators.','This essay will discuss fuel prices.','Higher fuel prices have lifted inflation, raised business costs and strained public finances.','Many people have opinions about fuel.'],a:2,w:'Only the third gives an answer and its reasons. The others describe or announce.'}},
+{k:'topic',t:'The topic sentence',sub:'Like the signboard on a danfo windscreen.',
+an:'Look at the signboard on a danfo windscreen: “Oshodi.” One glance and you know where this bus goes, so you never need to ask each passenger. A topic sentence is the windscreen board for a paragraph. It announces the one place everything inside is heading.',
+dg:[['Topic sentence|the signboard'],['Reason or example|passenger 1','Another reason or example|passenger 2'],['Summary|the last stop']],
+ex:{cap:'The highlighted sentence is the signboard. Everything after it serves that one idea.',parts:[['Social impact is the first measure that shows success beyond profit.',1],[' For example, low staff turnover and fair pay show that a company treats its people well. Another sign is the share of local suppliers a firm uses, which spreads benefit across the community.',0]]},
+pl:'The first sentence of a paragraph tells the reader the one thing this paragraph is about. Every other sentence has to help that one thing.',
+td:'Topic sentence: the opening sentence of a body paragraph that states its single controlling idea, which the remaining sentences support with reasons, evidence or examples.',
+chk:{q:'Which is the stronger topic sentence for a paragraph about the environment?',o:['There are many things for firms to think about.','Environmental impact is a second measure of success beyond profit.','For example, emissions can fall.','Companies do a lot of different things.'],a:1,w:'It names one clear idea the paragraph can prove. The others are vague, or are evidence rather than a signpost.'}},
+{k:'body',t:'The body paragraph',sub:'Like a trader at Balogun Market.',
+an:'Picture a trader at Balogun Market. She hangs one sign (“Ankara fabric”), holds up her two best pieces to prove it, then closes the sale with one line: “Quality that lasts.” A stall selling fabric, phone cases and shoes all at once would only confuse you. A body paragraph sells one idea the same way.',
+dg:[['Topic sentence|the sign'],['Reason or example|best piece 1'],['Another reason or example|best piece 2'],['Summary|the closing line']],
+ex:{cap:'Four sentences, four jobs.',roles:[['Topic sentence','Social impact is the first measure that shows success beyond profit.'],['Reason or example','For example, low staff turnover and fair pay show that a company treats its people well.'],['Another reason or example','Another sign is the share of local suppliers a firm uses, which spreads benefit across the community.'],['Summary','So social measures reveal strengths that a balance sheet cannot.']]},
+pl:'Say your point. Prove it once. Prove it again a different way. Then close the door.',
+td:'Body paragraph: a unit of at least four sentences built around one controlling idea, made up of a topic sentence, supporting reasons or examples, and a concluding summary sentence.',
+chk:{q:'A paragraph has a topic sentence and one example, then stops. What is missing from the target pattern?',o:['A second reason or example, and a summary sentence','A longer definition of the topic','A brand-new topic to keep things interesting','A copy of the prompt'],a:0,w:'The target is topic, reason, another reason, summary. Without them the idea is under-proved.'}},
+{k:'link',t:'Linking words',sub:'Like the bridges between Lagos islands.',
+an:'Lagos is a city of islands joined by bridges: Third Mainland, Eko, Carter. Without a bridge you would need a boat between every two places. Linking words are the bridges between your sentences, and each one tells the reader which way the road goes next.',
+dg:[['However|turn the other way','Moreover|keep going the same way','Therefore|here is the result','For example|here is the proof']],
+ex:{cap:'Each highlighted bridge tells you what kind of sentence is coming. (Illustrative example.)',parts:[['Fuel prices rose. ',0],['As a result',1],[', transport fares followed. ',0],['For example',1],[', a short danfo ride became more expensive. ',0],['However',1],[', wages stayed flat. ',0],['Therefore',1],[', many households cut other spending.',0]]},
+pl:'Small signposts that say: more of the same, the opposite, a result, or an example.',
+td:'Linking words (transitional or cohesive devices): words and phrases such as however, therefore, moreover and for example that signal logical relationships between sentences and paragraphs, including contrast, cause and effect, addition and illustration.',
+chk:{q:'Which linking word fits? “Fuel prices rose. ____, transport fares went up.”',o:['However','In contrast','As a result','Instead'],a:2,w:'The fuel price rise caused the fare rise, so you need a result signal.'}},
+{k:'star',t:'The STAR story answer',sub:'Like retelling a match your friend missed.',
+an:'Think of telling a friend about a match they missed. You set the scene (who played and what was at stake), say your job on the pitch, walk through the key play step by step, give the final score, then say what the team should do differently next time. A strong interview story is a match report about you.',
+dg:[['Situation|the kick-off'],['Task and stakes|your job and what was at risk'],['Action|what you did, step by step'],['Result|the final score'],['Lesson|what you do differently now']],
+ex:{cap:'From a story answer about an integrity problem.',roles:[['Situation','In my final-year group project, we were two days from the deadline when I saw a teammate had copied figures from an old report.'],['Task and stakes','As the person who compiled the data, I had to choose between staying quiet and reporting it, knowing it could cost us marks.'],['Action','I spoke to my teammate privately, replaced the figures with our own measurements, and told our supervisor what had happened.'],['Result','We lost a little time and some marks, but the supervisor praised our honesty and the team kept its credibility.'],['Lesson','I learned that raising a problem early and calmly protects both the work and the people involved.']]},
+pl:'Where were you, what was at risk, what did you do, how did it end, and what do you do differently now?',
+td:'STAR method (Situation, Task, Action, Result), extended here with a Lesson: a structured framework for behavioural interview answers that shows a competency through one specific past experience, stressing your own actions and measurable outcomes.',
+chk:{q:'Which line belongs in the Action step?',o:['It was my final-year group project.','I spoke to my teammate privately and replaced the figures.','We got a good grade in the end.','I learned to raise problems early.'],a:1,w:'Action is what you did, in the first person. The other lines are situation, result and lesson.'}}];
+var LM={o0:0,o2:2,o5:4};
+function nudge(k){return LM[k]!=null?'<p><button class="btn g" style="padding:6px 14px" data-a="ad" data-i="'+LM[k]+'">New to this? Start with the ADEPT lesson</button></p>':''}
+function adH(){return'<h2>ADEPT Lessons</h2><p class="mut sm">Start here. Every lesson begins with an everyday picture, never a definition.</p><div class="grid">'+AD.map(function(l,i){return'<button class="m" data-a="ad" data-i="'+i+'"><span class="t">'+(S.done['ad_'+l.k]?'✓':'')+'</span><b>'+esc(l.t)+'</b><span class="mut sm">'+esc(l.sub)+'</span></button>'}).join('')+'</div>'}
+function ad(i){G={m:'ad',i:i,s:0,ans:null};adR()}
+function adBody(l,s){if(s===0)return'<p class="big">'+esc(l.an)+'</p><p class="sm mut">No definition yet. First, just feel how it works.</p>';
+if(s===1)return dgH(l.dg);
+if(s===2){var e=l.ex,b='';if(e.parts)b='<p class="big">'+e.parts.map(function(x){return x[1]?'<span class="mk">'+esc(x[0])+'</span>':esc(x[0])}).join('')+'</p>';else b=e.roles.map(function(r){return'<div style="margin:10px 0"><span class="chip on">'+esc(r[0])+'</span><div>'+esc(r[1])+'</div></div>'}).join('');return b+'<p class="sm mut">'+esc(e.cap)+'</p>'}
+if(s===3)return'<p class="big">'+esc(l.pl)+'</p><p class="sm mut">Say it out loud as if to a ten-year-old.</p>';
+return'<p class="big">'+esc(l.td)+'</p><p class="sm mut">Match each official word to the picture you built in steps A to P.</p>'}
+function adR(){var l=AD[G.i],s=G.s,h=head()+'<h2>ADEPT · '+esc(l.t)+'</h2><div>'+STEPS.map(function(x,k){return'<span class="chip '+(k===s?'on':(k<s?'':'off'))+'">'+x[0]+'</span>'}).join('')+'<span class="chip '+(s===5?'on':'off')+'">✓</span></div>';
+if(s<5){var x=STEPS[s];h+='<div class="card" style="margin-top:12px"><div class="stp"><i>'+x[0]+'</i><div><b>'+x[1]+'</b><small>'+x[2]+'</small></div></div>'+adBody(l,s)+'</div><div class="row">'+(s?'<button class="btn g" data-a="adp">Back</button>':'')+'<button class="btn" data-a="adn">'+(s===4?'Check it':'Next')+'</button></div>'}
+else{var c=l.chk,a=G.ans;h+='<div class="q" style="margin-top:12px"><b>Quick check.</b> '+esc(c.q)+'</div><div class="roles" style="grid-template-columns:1fr">'+c.o.map(function(o,j){var k=a!=null?(j===c.a?' ok':(j===a?' no':'')):'';return'<button class="'+k+'" style="text-align:left" data-a="adq" data-j="'+j+'"'+(a!=null?' disabled':'')+'>'+esc(o)+'</button>'}).join('')+'</div>';
+if(a!=null){var ok=a===c.a;h+=(ok?cele():'')+'<div class="fb'+(ok?' ok':'')+'"><b>'+(ok?'Yes.'+(G.xp?' +20 XP':''):'Not quite.')+'</b> '+esc(c.w)+'</div><div class="row">'+(ok?'':'<button class="btn" data-a="adr">Try again</button>')+'<button class="btn g" data-a="ad" data-i="'+G.i+'">Replay lesson</button><button class="btn g" data-a="home">All lessons</button></div>'}}
+show(h)}
+
+/* ---- 2. Catch Coach Slip's mistake ---- */
+var CC=[
+{t:'Writing the introduction',l:['First, a broad background sentence that sets the scene.','Next, rewrite the question in your own words.','Then copy the question word for word, so the marker sees you read it.','Finish with a thesis that answers the question and names your reasons.'],b:2,w:'Copying the prompt shows no thinking. The rewrite has to be in your own words.',f:'Put the question in your own words instead of copying it.'},
+{t:'Writing the conclusion',l:['Restate your thesis in fresh words.','Remind the reader of your main points.','End with a brand-new example for a big finish.','Open with a signal such as “In conclusion”.'],b:2,w:'A conclusion tells the reader what you already told them. New evidence belongs in a body paragraph.',f:'Leave new examples out and close with your thesis and main points.'},
+{t:'Building a body paragraph',l:['Open with a topic sentence that names one idea.','Add a reason or example that backs it up.','Add another reason or example.','Finish by starting a different idea, to keep the reader curious.'],b:3,w:'A body paragraph ends by summarising its own idea. A new idea needs a new paragraph.',f:'Close with a summary sentence that wraps up the paragraph’s idea.'},
+{t:'The command word “Discuss”',l:['Write only a definition and stop there.','Look at every part of the question.','Give reasons and examples for each part.','Where it fits, weigh more than one side.'],b:0,w:'“Discuss” asks for a reasoned answer that covers every part, not a definition alone.',f:'Cover each part with reasons and examples.'},
+{t:'Critically analyzing',l:['It means judging an idea, not just describing it.','Show both strengths and weaknesses.','Back each judgement with a real-world example.','Choose a side in line one and ignore any evidence against it.'],b:3,w:'Critical analysis weighs the evidence on more than one side before reaching a view.',f:'Weigh both sides, then give a reasoned judgement.'},
+{t:'Telling a STAR story',l:['Situation: set the scene.','Task: say what you were responsible for and what was at stake.','Action: describe what “we” did, and never say what you did yourself.','Result: say how it ended.'],b:2,w:'The marker is assessing you. Say “I” and name your own actions.',f:'Say “I” and describe each step you took.'},
+{t:'Writing the Result',l:['Say what actually happened.','Use a number or a clear outcome where you can.','Mention what other people said about it.','Keep it vague, like “it was fine”, so you do not sound boastful.'],b:3,w:'A vague result gives the reader nothing to picture. Concrete outcomes are proof.',f:'Give a specific outcome, such as marks lost or praise received.'},
+{t:'Using linking words',l:['“Moreover” signals a contrast with the last point.','“However” signals a contrast.','“Therefore” signals a result.','“For example” introduces evidence.'],b:0,w:'“Moreover” adds more in the same direction. “However” is the contrast word.',f:'Use “however” for contrast and “moreover” to add.'},
+{t:'Writing topic sentences',l:['It names one main idea.','Make it vague so it can fit any point.','It opens the paragraph.','Every other sentence should support it.'],b:1,w:'A vague topic sentence cannot guide the paragraph. Be specific about the one idea.',f:'Name one clear idea the paragraph can prove.'},
+{t:'Respecting the word limit',l:['Check the word range in the prompt first.','Going far over is fine, because more is always better.','If the range is 300–500 words, aim inside it.','Cut filler to stay within the range.'],b:1,w:'Going over the limit shows poor control, and a reader may stop early.',f:'Stay inside the range and trim filler.'},
+{t:'Using evidence',l:['Phrases like “many experts agree” are enough proof.','Name a real firm, number or case when you can.','A specific example beats a big claim.','Tie each example back to your topic sentence.'],b:0,w:'Vague appeals to experts prove nothing. Name the source or the case.',f:'Name a specific firm, figure or case.'},
+{t:'Writing the thesis',l:['It belongs in the introduction.','It should only repeat the background sentence.','It answers the question.','It names your main reasons.'],b:1,w:'The background sets the scene. The thesis gives your answer and reasons.',f:'Answer the question and name your reasons.'}];
+function cc(){G={m:'cc',q:shuf(CC).slice(0,6),k:0,sc:0,pk:null};ccR()}
+function ccR(){if(G.k>=G.q.length){add(G.sc*2);S.cc=Math.max(S.cc||0,G.sc);S.done.cc=1;sav();show(head()+'<h2>Catch Coach Slip</h2>'+(G.sc>=4?cele():'')+'<div class="fb ok"><b>You caught '+G.sc+' of '+G.q.length+' slips.</b> +'+G.sc*2+' bonus XP</div><div class="row"><button class="btn" data-a="cc">Play again</button><button class="btn g" data-a="home">Back</button></div>');return}
+var q=G.q[G.k],p=G.pk,h=head()+'<h2>Catch Coach Slip’s mistake</h2><p class="mut sm">Round '+(G.k+1)+' of '+G.q.length+' · caught '+G.sc+'</p><div class="slipbox">'+slip(p==null?'ok':(p===q.b?'oops':'cheer'))+'<div class="bub">'+(p==null?'Today I am teaching: <b>'+esc(q.t)+'</b>. Listen closely. One of my lines is wrong!':(p===q.b?'Oops! You caught me. That was my slip.':'Ha! You missed it. Look at the red line.'))+'</div></div><p class="sm">Tap the line where Coach Slip slipped up.</p>';
+q.l.forEach(function(x,k){var c='';if(p!=null){c=k===q.b?' bad':(k===p?' mine':' fine');if(k===p&&k===q.b)c=' bad'}h+='<button class="pick'+c+'" data-a="ccp" data-l="'+k+'"'+(p!=null?' disabled':'')+'>'+(p!=null?(k===q.b?'✗ ':'✓ '):'')+esc(x)+'</button>'});
+if(p!=null)h+='<div class="fb'+(p===q.b?' ok':'')+'"><b>'+(p===q.b?'Good catch! +6 XP.':'Not this time.')+'</b> '+esc(q.w)+'<br><b>Fix:</b> '+esc(q.f)+'</div><div class="row"><button class="btn" data-a="ccn">'+(G.k+1>=G.q.length?'See score':'Next')+'</button></div>';
+show(h)}
+
+/* ---- 3. Choose your path (branching scenarios) ---- */
+var BR=[
+{k:'intro',t:'The 25-minute introduction',d:'A Discuss prompt and a running clock',s:'a',n:{
+a:{x:'You open the exam page. The prompt reads: “Discuss how the recent increases in fuel prices … have affected the economy.” The clock says 25:00 and a classmate is already typing. What do you do first?',c:[['Start writing right away. Time is short.','b','You start fast, but nobody has told you what the question really needs.','b'],['Spend two minutes circling the command word and listing the parts.','c','“Discuss” means cover every part with reasons. You spot three: inflation, business costs and government finances.','g'],['Copy the question as my first sentence, to be safe.','d','The marker sees the prompt repeated back, not your thinking.','b']]},
+b:{x:'Ten minutes in, you have 200 words about fuel queues. You realise you have not touched government finances at all. What now?',c:[['Keep going. More words will cover it somehow.','e1','You reach 500 words, but a whole part of the question is missing.','b'],['Pause, note the missing part, and give it its own body paragraph.','e2','Late, but you rescue the structure by giving each part its own paragraph.','g']]},
+d:{x:'You have used three minutes copying and still need a background sentence and a thesis. What next?',c:[['Rewrite the question in my own words, then write a thesis with reasons.','e2','Own words plus a thesis with reasons puts the introduction back on track.','g'],['Skip ahead to the body. The thesis can come later.','e1','Without a thesis, your body paragraphs have no destination.','b']]},
+c:{x:'Plan done. Now the opening. Which introduction will make the marker lean in?',c:[['“Few prices touch daily life as directly as fuel.” Then a rewrite of the question and a thesis naming inflation, business costs and public finances.','e3','Background, an own-words rewrite, and a thesis with three reasons.','g'],['“Fuel is a liquid that powers engines.”','e1','A dictionary line wastes your best sentence and answers nothing.','b'],['“In this essay I will discuss fuel prices.”','e2','It signposts, but it never says what your answer is.','b']]},
+e1:{e:0,h:'Drifting without a map',x:'The marker cannot find your answer or follow a plan, and one part of the question never gets covered.',w:'A thesis with reasons and two minutes of planning would have prevented this.'},
+e2:{e:1,h:'Rescued, with scars',x:'The essay answers the question, but the opening is plain or late, and you lost minutes you needed.',w:'Decoding first costs two minutes and saves ten.'},
+e3:{e:2,h:'Map in hand',x:'Every body paragraph has a job: inflation, business costs, public finances. The marker can follow you from line one.',w:'Decode, background, rewrite, thesis with reasons. That order wins.'}}},
+{k:'story',t:'The integrity story',d:'A behavioural answer, built one choice at a time',s:'a',n:{
+a:{x:'KPMG asks: “Describe a time you were pressured to compromise your standards.” You have two memories. (A) A teammate copied figures from an old report into your final-year group project, two days before the deadline. (B) You once forgot a deadline and felt bad. Which story do you pick?',c:[['Story A: the copied figures.','b','Real pressure, a real choice and a clear ethical stake. Good raw material.','g'],['Story B: the missed deadline.','e1','There was no pressure to cut corners, so the story does not fit the question.','b']]},
+b:{x:'Now the Action section, the heart of the answer. Which draft do you write?',c:[['“We spoke to the teammate and we fixed the problem.”','e2','The marker cannot tell what YOU did.','b'],['“I spoke to him privately, replaced the figures with our own measurements, and told our supervisor, because accurate work mattered more than a mark.”','f','Your own actions, in order, with your reason.','g'],['“I did the right thing and it worked out.”','e1','That is a verdict, not an action.','b']]},
+f:{x:'Strong action. Now the Result. Which version do you write?',c:[['“Everything was fine in the end.”','e2','Vague. There is no outcome the marker can picture.','b'],['“We lost two marks and half a day, but our supervisor praised our honesty and used our report as a model.”','g','Numbers, an outcome and what others said.','g']]},
+g:{x:'Last piece: the lesson. What do you write?',c:[['“I learned that I should not trust teammates.”','e2','Blaming others sounds defensive, not mature.','b'],['“I now raise problems early and calmly, and I check sources before I compile any data.”','e3','A lesson that changes your future behaviour.','g']]},
+e1:{e:0,h:'Wrong story or empty action',x:'The answer does not show you facing pressure, or it never says what you actually did.',w:'Pick a story with real stakes, then name your own actions.'},
+e2:{e:1,h:'Almost there',x:'The story fits, but a vague section leaves the marker guessing about you.',w:'Use “I”, concrete outcomes and a lesson that changes what you do.'},
+e3:{e:2,h:'Interview-ready',x:'Real stakes, your own actions, a concrete result and a lesson that shows growth.',w:'This is the STAR pattern at its best.'}}},
+{k:'limit',t:'The word-limit panic',d:'620 words, a 300–500 word prompt, 3 minutes',s:'a',n:{
+a:{x:'The “Why KPMG” prompt allows 300–500 words. You have written 620 and have 3 minutes left. What do you do?',c:[['Submit as it is. The panel will see how much I know.','e1','Going far over the limit shows poor control, and a reader may stop before the end.','b'],['Cut repeated points, filler and examples that prove nothing.','b','Trimming the weakest lines first protects your strongest content.','g'],['Delete the whole conclusion to save space.','e2','You are under the limit, but your ending has vanished.','b']]},
+b:{x:'You are at 480 words, but your “why KPMG” paragraph is thin. Which sentence do you keep?',c:[['“KPMG is a leading firm with a great reputation.”','e2','Every applicant can say this about any firm.','b'],['“KPMG’s value of integrity matches how I handled a data-accuracy problem in my final-year project.”','e3','A specific value, with proof from your own experience.','g']]},
+e1:{e:0,h:'Over the line',x:'The panel sees an answer that ignores the instructions, and the best points may go unread.',w:'Staying inside the range is part of the test.'},
+e2:{e:1,h:'Within the limit, but thin',x:'You respect the limit, but the answer is generic or ends abruptly.',w:'Cut weak lines, not the ending or the proof.'},
+e3:{e:2,h:'Tight and specific',x:'Inside the range, with a named value and a project as proof.',w:'Specific beats generic every time.'}}}];
+function endsOf(sc){return Object.keys(sc.n).filter(function(k){return sc.n[k].e!=null})}
+function found(sc){return endsOf(sc).filter(function(k){return S.br[sc.k+':'+k]}).length}
+function brOrd(){var n=BR[G.i].n[G.nd];G.co=n.c?shuf(n.c.map(function(_,j){return j})):null}
+function br(i){G={m:'br',i:i,nd:BR[i].s,tr:[],last:null,gain:0};brOrd();brR()}
+function brR(){var sc=BR[G.i],n=sc.n[G.nd],h=head()+'<h2>'+esc(sc.t)+'</h2>';
+if(G.last)h+='<div class="fb'+(G.last[2]==='g'?' ok':'')+'"><b>You chose:</b> “'+esc(G.last[0])+'”<br>'+esc(G.last[1])+'</div>';
+if(n.e!=null){var all=endsOf(sc);h+=(n.e===2?cele():'')+'<div class="card" style="margin-top:14px"><div class="stars">'+['★☆☆','★★☆','★★★'][n.e]+'</div><b class="big">'+esc(n.h)+'</b><p><b>What the marker sees:</b> '+esc(n.x)+'</p><p class="sm mut"><b>Why:</b> '+esc(n.w)+'</p></div><p class="mut sm">'+(G.gain?'+'+G.gain+' XP for a new ending. ':'You have seen this ending before. ')+found(sc)+' of '+all.length+' endings found.</p><div class="row"><button class="btn" data-a="br" data-i="'+G.i+'">Try another path</button><button class="btn g" data-a="home">All scenarios</button></div>'}
+else{h+='<p class="mut sm">Decision '+(G.tr.length+1)+'</p><div class="q">'+esc(n.x)+'</div>'+G.co.map(function(j){return'<button class="pick" data-a="brc" data-j="'+j+'">'+esc(n.c[j][0])+'</button>'}).join('')}
+show(h)}
+function mgH(){return'<h2>Mind Games</h2><p class="mut sm">Catch the coach out, then choose your own path.</p><div class="grid"><button class="m" data-a="cc"><span class="t">'+(S.cc?'best '+S.cc+'/6':'')+'</span><b>Catch Coach Slip’s mistake</b><span class="mut sm">Slip teaches a rule with one wrong line. Tap it.</span></button>'+BR.map(function(b,i){return'<button class="m" data-a="br" data-i="'+i+'"><span class="t">'+found(b)+'/'+endsOf(b).length+'</span><b>Choose your path: '+esc(b.t)+'</b><span class="mut sm">'+esc(b.d)+'</span></button>'}).join('')+'</div>'}
+
+/* ---- click dispatch for the new modes ---- */
+function mg(a,d){switch(a){
+case'ad':ad(+d.i);return 1;
+case'adn':G.s++;adR();return 1;
+case'adp':G.s--;adR();return 1;
+case'adr':G.ans=null;adR();return 1;
+case'adq':{var l=AD[G.i];G.ans=+d.j;G.xp=0;if(G.ans===l.chk.a&&!S.done['ad_'+l.k]){S.done['ad_'+l.k]=1;add(20);G.xp=1}adR();return 1}
+case'cc':cc();return 1;
+case'ccp':{var q=G.q[G.k];G.pk=+d.l;if(G.pk===q.b){G.sc++;add(6)}ccR();return 1}
+case'ccn':G.k++;G.pk=null;ccR();return 1;
+case'br':br(+d.i);return 1;
+case'brc':{var sc=BR[G.i],c=sc.n[G.nd].c[+d.j];G.tr.push(c[0]);G.last=[c[0],c[2],c[3]];G.nd=c[1];G.gain=0;var nx=sc.n[G.nd];if(nx.e!=null){var key=sc.k+':'+G.nd;if(!S.br[key]){S.br[key]=1;G.gain=[5,12,25][nx.e];add(G.gain)}}else brOrd();brR();return 1}}
+return 0}
+
 home();
 </script></body></html>
